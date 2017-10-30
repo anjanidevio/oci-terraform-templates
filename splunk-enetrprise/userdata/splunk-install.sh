@@ -8,7 +8,8 @@ sudo ./splunk enable boot-start
 ./splunk enable listen 9997 -auth admin:changeme
 ./splunk restart
  
-sudo apt install -y firewalld
+sudo apt-get update 
+sudo apt-get install -y firewalld
 sudo firewall-cmd --list-ports
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=9997/tcp --permanent
