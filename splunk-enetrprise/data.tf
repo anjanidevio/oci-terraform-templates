@@ -17,3 +17,4 @@ data "oci_core_vnic_attachments" "splunkNic" {
 data "oci_core_vnic" "splunk-nic" {
   vnic_id = "${lookup(data.oci_core_vnic_attachments.splunkNic.vnic_attachments[0],"vnic_id")}"
 }
+
