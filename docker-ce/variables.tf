@@ -1,25 +1,25 @@
 variable "tenancy_ocid" {
-    default = ""
+    
 }
 
 variable "user_ocid" {
-    default = ""
+    
 }
 
 variable "fingerprint" {
-    default = ""
+    
 }
 
-variable "private_key_path" {
-    default = ""
+variable "private_key_url" {
+    default = "./userdata/obmcpvt.pem"
 }
 
 variable "region" {
-    default = ""
+    default = "us-ashburn-1"
 }
 
 variable "compartment_ocid" {
-    default = ""
+    default = "ocid1.compartment.oc1..aaaaaaaajgefvmehc6szlyyt66aiu6ecefhr7myrn32w2c5prxng5mq3wu7q"
 }
 
 variable "prefix" {
@@ -47,7 +47,7 @@ variable "instance_count" {
 }
 
 variable "instanceShape" {
-    default = "VM.Standard1.2"
+    default = "VM.Standard1.8"
 }
 
 variable "instanceLinOS" {
