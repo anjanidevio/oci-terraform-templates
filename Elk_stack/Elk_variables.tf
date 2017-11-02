@@ -1,3 +1,22 @@
+variable "tenancy_ocid" {
+    
+}
+
+variable "user_ocid" {
+    
+}
+
+variable "fingerprint" {
+    
+}
+
+variable "private_key_url" {
+    default = ""
+}
+
+variable "region" {
+    default = "us-ashburn-1"
+}
 variable "region" {
     default = "us-ashburn-1"
 }
