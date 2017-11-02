@@ -1,6 +1,6 @@
 #!/bin/bash
-username=Dbadmin
-pwd=hpevertica123
+username=dbadmin
+pwd=Testdriveuser123
 sudo usermod -l $username opc
 usermod -d /home/$username -m $username
 echo -e "$pwd\n$pwd" | sudo passwd $username

@@ -46,6 +46,9 @@ variable "InstanceOSVersion" {
 variable "InstanceShape" {
     default = "VM.Standard1.8"
 }
+variable "DBSize" {
+  default = "262144" 
+}
 variable "BootStrapFile" {
    default = "./userdata/enablepassword.sh"
 }
