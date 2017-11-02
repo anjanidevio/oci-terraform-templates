@@ -17,9 +17,6 @@ variable "private_key_url" {
 variable "region" {
     default = "us-ashburn-1"
 }
-variable "region" {
-    default = "us-ashburn-1"
-}
 
 variable "compartment_id" {
     default = "ocid1.compartment.oc1..aaaaaaaajgefvmehc6szlyyt66aiu6ecefhr7myrn32w2c5prxng5mq3wu7q"
