@@ -1,11 +1,11 @@
 variable "tenancy_ocid" {
-    default ="ocid1.tenancy.oc1..aaaaaaaaa4jvtf7x54iv54vz77ivqui2nlb7ordznpupnvqbaktl6vkwfhga"
+    default =""
 }
 variable "user_ocid" {
-    default = "ocid1.user.oc1..aaaaaaaat5pk2vhfib7bnf6n3bqsw2mjlieisfv4yfjtw5xvrkwpvvhkiloq"
+    default = ""
 }
 variable "fingerprint" {
-    default = "17:a3:de:96:8b:f6:b4:d5:69:29:77:cb:b9:cb:42:a4"
+    default = ""
 }
 variable "private_key_path" {
     default = "./userdata/pvt.pem"
