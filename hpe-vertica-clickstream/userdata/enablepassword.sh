@@ -1,7 +1,7 @@
-#!/bin/bash
-username=dbadmin
-pwd=Testdriveuser123
-sudo usermod -l $username opc
+#!bin/bash
+username="dbadmin"
+pwd="Testdriveuser123"
+sudo usermod -l $username ubuntu
 usermod -d /home/$username -m $username
 echo -e "$pwd\n$pwd" | sudo passwd $username
 file="/etc/ssh/sshd_config"

@@ -1,13 +1,12 @@
 variable "tenancy_ocid" {
-     default ="ocid1.tenancy.oc1..aaaaaaaaa4jvtf7x54iv54vz77ivqui2nlb7ordznpupnvqbaktl6vkwfhga"
+
 }
 
 variable "user_ocid" {
-    default ="ocid1.user.oc1..aaaaaaaaj6sylt65tk3fcdkwa2qlodgh7mzwd2olhcfmrisdy5vew6qqh4nq"
-}
+   
 
 variable "fingerprint" {
-    default ="fc:e3:0c:86:ac:62:9c:a3:62:18:fb:79:0f:f7:2e:10" 
+   
 }
 
 variable "private_key_url" {
@@ -15,7 +14,7 @@ variable "private_key_url" {
 }
 
 variable "region" {
-    default = "us-ashburn-1"
+    default = "us-phoenix-1"
 }
 
 variable "compartment_id" {
@@ -37,11 +36,11 @@ variable "ssh_public_key" {
     default = "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAv03W+dhSLiPMKj9iOTa9kC5um7KhCLy9LUbslswbNVydtU+EVWLa4aRhe5giwBKbEiPaEu1iiuq/9lp+DGNh4D5YONQioi7eyXJxzfqCiQhHyJKuQNE6PhAcYb6UyC1RotrUKDilHUMWlDXdJwW8k49oSd4dlQsLKdzAB470RcOgCBnHwMefS15ZDbgRCbWCxva/voxzroAK3xLm"
 }
 variable "InstanceOS" {
-    default = "CentOS"
+    default = "Canonical Ubuntu"
 }
 
 variable "InstanceOSVersion" {
-    default = "7"
+    default = "16.04"
 }
 variable "InstanceShape" {
     default = "VM.Standard1.8"
