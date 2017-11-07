@@ -11,7 +11,7 @@ sudo ./splunk enable boot-start
 #commands to open ports
 #sudo apt-get update
 #sudo apt-get install -y firewalld
-sudo firewall-cmd --list-ports
+#sudo firewall-cmd --list-ports
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=9997/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
