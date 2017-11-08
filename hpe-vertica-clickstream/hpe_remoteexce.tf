@@ -5,14 +5,14 @@ resource "null_resource" "remote-exec" {
         agent = false
         timeout = "15m"
         host = "${data.oci_core_vnic.hpe-nic.public_ip_address}"
-        user = "dbadmin"
+        user =  ${var.admin_username}
         private_key = "${(file(var.ssh_private_key))}"
       }
       inline = [
-        "cd ~dbadmin",
+        "cd ~${var.admin_username}",
         "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-hpe-vertica/hpe-vertica-clickstream/userdata/hpe_script.sh ",
         "chmod +x hpe_script.sh",
-        "./hpe_script.sh"
+        "./hpe_script.sh ${var.admin_username}"
       ]
     }
 }
