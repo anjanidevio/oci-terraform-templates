@@ -1,0 +1,15 @@
+variable "compartment_ocid" {}
+variable "prefix" {}
+variable "image_ocid" {}
+variable "instanceShape" {}
+variable "subnet1_ocid" {}
+variable "subnet2_ocid" {}
+variable "bootStrapFileDir" {}
+variable "ad1_name" {}
+variable "ad2_name" {}
+variable "sshPublicKey" {}
+variable "ssh_private_key" {}
+variable "admin_username" {}
+variable "admin_password" {}
+variable "linux-a_public_ip" {}
+variable "linux-b_public_ip" {}
