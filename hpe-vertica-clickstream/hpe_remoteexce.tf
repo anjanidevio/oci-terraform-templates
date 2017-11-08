@@ -5,7 +5,7 @@ resource "null_resource" "remote-exec" {
         agent = false
         timeout = "15m"
         host = "${data.oci_core_vnic.hpe-nic.public_ip_address}"
-        user =  ${var.admin_username}
+        user =  "${var.admin_username}"
         private_key = "${(file(var.ssh_private_key))}"
       }
       inline = [
@@ -19,7 +19,7 @@ resource "null_resource" "remote-exec" {
 
 data "oci_core_vnic_attachments" "hpenic" {
  compartment_id = "${var.compartment_id}"
-  availability_domain = "${lookup(data.oci_identity_availability_domains.availdomain.availability_domains[0],"name")}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.AvailDomain.availability_domains[0],"name")}"
   instance_id = "${oci_core_instance.HPEVm.id}"
 } 
 
