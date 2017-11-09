@@ -1,6 +1,6 @@
 data "oci_core_vnic_attachments" "elknic" {
  compartment_id = "${var.compartment_id}"
-  availability_domain = "${lookup(data.oci_identity_availability_domains.availdomain.availability_domains[0],"name")}"
+  availability_domain = "${var.AD_name}"
   instance_id = "${oci_core_instance.Elkvm.id}"
 } 
 
