@@ -1,9 +1,9 @@
-resource "oci_core_route_table" "ELkRoutetable" {
+resource "oci_core_route_table" "ElkRoutetable" {
     compartment_id = "${var.compartment_id}"
-    display_name = "${var.VCN-DisplayName}-rt${random_id.uniqueString.hex}"
+    display_name = "${var.VCN-DisplayName}-rt"
     route_rules {
         cidr_block = "0.0.0.0/0"
-        network_entity_id = "${oci_core_internet_gateway.ELKinternetgateway.id}"
+        network_entity_id = ""
     }
-    vcn_id = "${oci_core_virtual_network.ElkVcn.id}"
+    vcn_id = "${var.vcn_ocid}"
 }
