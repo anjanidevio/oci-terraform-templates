@@ -13,7 +13,3 @@ variable "COMP-ID" {}
 
 
 
-variable "subnet2_ocid" {}
-variable "ssh_private_key" {}
-variable "linux-a_public_ip" {}
-variable "linux-b_public_ip" {}
