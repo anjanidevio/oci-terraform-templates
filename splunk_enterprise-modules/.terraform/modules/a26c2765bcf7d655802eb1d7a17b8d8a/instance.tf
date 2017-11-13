@@ -3,7 +3,7 @@ resource "oci_core_instance" "splunkvm" {
     availability_domain = "${var.avail_domain}"   
     compartment_id = "${var.COMP-ID}"
     display_name = "${var.prefix}-ssh"
-    image = "${var.image}"
+    image = "${var.splunk_image}"
     shape = "${var.InstanceShape}"
   metadata {
         ssh_authorized_keys = "${var.ssh_public_key}"
@@ -16,7 +16,7 @@ resource "oci_core_instance" "splunkvm" {
   }
  create_vnic_details {
    
-    subnet_id = "${var.subnet1_ocid}"
+    subnet_id = "${var.subnet}"
     display_name = "${var.prefix}-nica"
     assign_public_ip = true
     hostname_label = "${var.prefix}-nica"
@@ -46,7 +46,7 @@ resource "oci_core_instance" "clientinstance" {
      availability_domain = "${var.avail_domain}" 
     compartment_id = "${var.COMP-ID}"
     display_name = "${var.prefix}-cvm"
-    image = "${var.image}"
+    image = "${var.splunk_image}"
     shape = "${var.InstanceShape}"
     depends_on = ["oci_core_instance.splunkvm"]
   metadata {
@@ -54,7 +54,7 @@ resource "oci_core_instance" "clientinstance" {
  user_data = "${base64encode(file(var.BootStrapFile))}"
    }
  create_vnic_details {
-    subnet_id = "${var.subnet1_ocid}"
+    subnet_id = "${var.subnet}"
     display_name = "clientnic"
     assign_public_ip = true
     hostname_label = "${var.prefix}-cins"
