@@ -14,7 +14,7 @@ module "instance" {
     source            = "modules/Instances"
     COMP-ID           = "${var.COMP-ID}"
     prefix            = "${var.prefix}"
-    splunk_image      = "${module.images_data_source.splunk_image}"
+    image_ocid      = "${module.images_data_source.image_ocid}"
     InstanceShape     = "${var.InstanceShape}"
     subnet            = "${module.subnets.subnet}"
     BootStrapFile     = "${var.BootStrapFile}"
