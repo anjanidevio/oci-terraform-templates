@@ -5,14 +5,14 @@ module "data_source_AD" {
 
 module "images_data_source" {
     source = "modules/images_data_source"
-    compartment_ocid  = "${var.COMP-ID}"
+    COMP-ID  = "${var.COMP-ID}"
     InstanceOS        = "${var.InstanceOS}"
     InstanceOSVersion = "${var.InstanceOSVersion}"
 }
 
 module "instance" {
     source            = "modules/Instances"
-    compartment_ocid  = "${var.COMP-ID}"
+    COMP-ID    = "${var.COMP-ID}"
     prefix            = "${var.prefix}"
     image             = "${module.images_data_source.image}"
     InstanceShape     = "${var.InstanceShape}"
@@ -28,14 +28,14 @@ module "instance" {
 
 module "dhcp_options" {
     source           = "modules/dhcp_options"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
 }
 
 module "internet_gateway" {
     source           = "modules/internet_gateway"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
 }
@@ -43,13 +43,13 @@ module "internet_gateway" {
 
 module "vcn" {
     source           = "modules/vcn"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
 }
 
 module "route_table" {
     source           = "modules/route_table"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
     internet_gateway = "${module.internet_gateway.internet_gateway}"
@@ -57,14 +57,14 @@ module "route_table" {
 
 module "security_list" {
     source           = "modules/security_list"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
 }
 
 module "subnets" {
     source           = "modules/subnets"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
     security_list    = "${module.security_list.security_list}"
@@ -75,7 +75,7 @@ module "subnets" {
 
 module "vnic_data" {
     source           = "modules/vnic_data"
-    compartment_ocid = "${var.COMP-ID}"
+    COMP-ID = "${var.COMP-ID}"
     avail_domain     = "${module.data_source_AD.avail_domain}"
     splunk_instance  = "${module.instance.splunk_instance}"
     }
