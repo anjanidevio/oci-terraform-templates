@@ -65,10 +65,10 @@ sudo openssl req -config /etc/ssl/openssl.cnf -x509 -days 3650 -batch -nodes -ne
 
 #Configuring Logstash
 echo "---Configuring Logstash---" >> $LOG
-sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/scripts/02-beats-input.conf -O /etc/logstash/conf.d/02-beats-input.conf >> $LOG
+sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Module_Elktemplate/userdata/02-beats-input.conf -O /etc/logstash/conf.d/02-beats-input.conf >> $LOG
 sudo ufw allow 5044 >> $LOG
-sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/scripts/10-syslog-filter.conf -O /etc/logstash/conf.d/10-syslog-filter.conf >> $LOG
-sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/scripts/30-elasticsearch-output.conf -O /etc/logstash/conf.d/30-elasticsearch-output.conf >> $LOG
+sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Module_Elktemplate/userdata/10-syslog-filter.conf -O /etc/logstash/conf.d/10-syslog-filter.conf >> $LOG
+sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Module_Elktemplate/userdata/30-elasticsearch-output.conf -O /etc/logstash/conf.d/30-elasticsearch-output.conf >> $LOG
 sudo /opt/logstash/bin/logstash --configtest -f /etc/logstash/conf.d/ >> $LOG
 sudo systemctl restart logstash >> $LOG
 sudo systemctl enable logstash >> $LOG
