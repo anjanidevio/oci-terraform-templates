@@ -69,7 +69,7 @@ module "subnets" {
     vcn_ocid         = "${module.vcn.vcn_ocid}"
     security_list    = "${module.security_list.security_list}"
     route_table      = "${module.route_table.route_table}"
-    dhcp             = "${module.vcn.dhcp}"
+    dhcp             = "${module.dhcp_options.dhcp}"
     avail_domain     = "${module.data_source_AD.avail_domain}"
 }
 
