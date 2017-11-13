@@ -8,6 +8,7 @@ variable "avail_domain" {}
 variable "ssh_public_key" {}
 variable "subnet1_ocid" {}
 variable "COMP-ID" {}
+variable "ssh_private_key" {}
 
 
 
