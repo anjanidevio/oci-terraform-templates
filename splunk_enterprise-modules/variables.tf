@@ -35,7 +35,7 @@ variable "ssh_public_key" {
 }
 
 variable "ssh_private_key" {
-    default = "./userdata/splunk17.pem"
+    default = "./user_data/splunk17.pem"
 }
 
 variable "admin_username" {
@@ -60,5 +60,5 @@ variable "InstanceOSVersion" {
 }
 
 variable "BootStrapFile" {
-  default = "./userdata/enable-password.sh"
+  default = "./user_data/enable-password_user.sh"
 }
