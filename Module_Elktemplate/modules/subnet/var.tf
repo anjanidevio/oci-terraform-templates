@@ -6,3 +6,5 @@ variable "security_list_ocid" {}
 variable "route_table_ocid" {}
 variable "internet_gateway_ocid" {}
 variable "dhcp_ocid" {}
+variable "VCN-DisplayName" {}
+variable "VCN-DNSLabel" {}
