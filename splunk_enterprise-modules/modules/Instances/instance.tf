@@ -43,7 +43,7 @@ resource "null_resource" "remote-exec0" {
 resource "oci_core_instance" "clientinstance" {
      availability_domain = "${var.avail_domain}" 
     compartment_id = "${var.COMP-ID}"
-    display_name = "clientvm"
+    display_name = "splunk_clientvm"
     image = "${var.image_ocid}"
     shape = "${var.InstanceShape}"
     depends_on = ["oci_core_instance.splunkvm"]
