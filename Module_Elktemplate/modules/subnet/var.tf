@@ -1,5 +1,5 @@
 variable "compartment_id" {}
-variable "DisplayName" {}
+variable "VCN-DisplayName" {}
 variable "DNSLabel" {}
 variable "vcn_ocid" {}
 variable "security_list_ocid" {}
