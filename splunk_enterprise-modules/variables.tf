@@ -60,5 +60,5 @@ variable "InstanceOSVersion" {
 }
 
 variable "BootStrapFile" {
-  default = "./user_data/enable-password_user.sh"
+  default = "./user_data/enable-password.sh"
 }
