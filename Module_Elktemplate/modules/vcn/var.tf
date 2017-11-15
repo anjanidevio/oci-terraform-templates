@@ -1,4 +1,4 @@
 variable "compartment_id" {}
-variable "DisplayName" {}
-variable "DNSLabel" {}
+variable "VCN-DisplayName" {}
+variable "VCN-DNSLabel" {}
 variable "ElkVcn-CIDR" {}
