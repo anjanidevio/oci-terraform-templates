@@ -1,10 +1,6 @@
 #!/bin/bash
-username=$1
-pwd=$2
-
-echo -e "ubuntu ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
-echo -e "$username ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
-
+username=ubuntu
+pwd=Password@1234
 ############change username from default username ############
 sudo usermod -l $username ubuntu
 usermod -d /home/$username -m $username
