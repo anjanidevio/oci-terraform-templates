@@ -1,13 +1,13 @@
 variable "tenancy_ocid" {
-    default = ""
+    
 }
 
 variable "user_ocid" {
-    default = ""
+    
 }
 
 variable "fingerprint" {
-    default = ""
+    
 }
 
 variable "private_key_path" {
@@ -23,7 +23,7 @@ variable "compartment_ocid" {
 }
 
 variable "prefix" {
-    default = "demo"
+    default = "dce"
 }
 
 variable "sshPublicKey" {
@@ -58,6 +58,3 @@ variable "instanceLinOSVersion" {
 variable "bootStrapFileDir" {
     default = "./userdata/enable-password-auth-user.sh"
 }
-
-
-
