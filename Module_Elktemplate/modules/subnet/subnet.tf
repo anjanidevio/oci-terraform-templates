@@ -1,7 +1,7 @@
 resource "oci_core_subnet" "Elksubnet" {
   compartment_id = "${var.compartment_id}"
 
-  availability_domain = "${lookup(data.oci_identity_availability_domains.availdomain.availability_domains[0],"name")}"
+  availability_domain = "${var.avail_domain_name}"
   route_table_id      = "${var.route_table_ocid}"
   vcn_id              = "${var.vcn_ocid}"
   security_list_ids   = ["${var.security_list_ocid}"]
