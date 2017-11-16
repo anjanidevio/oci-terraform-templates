@@ -1,7 +1,7 @@
 resource "oci_core_security_list" "securitylist" {
     compartment_id = "${var.COMP-ID}"
     vcn_id = "${var.vcn_ocid}"
-     display_name = "${var.prefix}_list"
+     display_name = "${var.prefix}-${var.unique_id}"
 
         // allow outbound tcp traffic on all ports
         egress_security_rules {

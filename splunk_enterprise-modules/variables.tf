@@ -19,15 +19,12 @@ variable "private_key_path" {
 }
 
 variable "prefix" {
-    default = "splunkvm"
+    default = "splunk"
 }
-
-
 variable "region" {
     type    = "string"
     default = "us-phoenix-1"
 }
-
 variable "COMP-ID" {
   default = "ocid1.compartment.oc1..aaaaaaaajgefvmehc6szlyyt66aiu6ecefhr7myrn32w2c5prxng5mq3wu7q"
 }
@@ -50,7 +47,7 @@ variable "admin_password" {
 
 
 variable "InstanceShape" {
-    default = "VM.Standard1.8"
+    default = "VM.Standard1.4"
 }
 
 variable "InstanceOS" {

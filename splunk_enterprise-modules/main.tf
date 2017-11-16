@@ -10,10 +10,16 @@ module "images_data_source" {
     InstanceOSVersion = "${var.InstanceOSVersion}"
 }
 
+module "unique_id" {
+    	source = "modules/unique_id"
+ 	}
+
+
 module "instance" {
     source            = "modules/Instances"
     COMP-ID           = "${var.COMP-ID}"
     prefix            = "${var.prefix}"
+    unique_id        = "${module.unique_id.unique_id}"
     image_ocid        = "${module.images_data_source.image_ocid}"
     InstanceShape     = "${var.InstanceShape}"
     subnet            = "${module.subnets.subnet}"
@@ -31,6 +37,7 @@ module "dhcp_options" {
     COMP-ID          = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
+    unique_id        = "${module.unique_id.unique_id}"
 }
 
 module "internet_gateway" {
@@ -38,6 +45,7 @@ module "internet_gateway" {
     COMP-ID          = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
+    unique_id        = "${module.unique_id.unique_id}"
 }
 
 
@@ -45,6 +53,7 @@ module "vcn" {
     source           = "modules/vcn"
     COMP-ID          = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
+    unique_id        = "${module.unique_id.unique_id}"
 }
 
 module "route_table" {
@@ -53,6 +62,7 @@ module "route_table" {
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
     internet_gateway = "${module.internet_gateway.internet_gateway}"
+    unique_id        = "${module.unique_id.unique_id}"
 }
 
 module "security_list" {
@@ -60,6 +70,7 @@ module "security_list" {
     COMP-ID          = "${var.COMP-ID}"
     prefix           = "${var.prefix}"
     vcn_ocid         = "${module.vcn.vcn_ocid}"
+    unique_id        = "${module.unique_id.unique_id}"
 }
 
 module "subnets" {
@@ -71,6 +82,7 @@ module "subnets" {
     route_table      = "${module.route_table.route_table}"
     dhcp             = "${module.dhcp_options.dhcp}"
     avail_domain     = "${module.data_source_AD.avail_domain}"
+    unique_id        = "${module.unique_id.unique_id}"
 }
 
 module "vnic_data" {

@@ -6,7 +6,6 @@ resource "oci_core_subnet" "subnet1" {
   vcn_id              = "${var.vcn_ocid}"
   security_list_ids   = ["${var.security_list}"]
   dhcp_options_id     = "${var.dhcp}"
-  dns_label           = "${var.prefix}subnet1"
-  display_name        = "${var.prefix}_subnet"
- 
+  dns_label           = "${var.prefix}${var.unique_id}"
+  display_name        = "${var.prefix}-${var.unique_id}"
 }

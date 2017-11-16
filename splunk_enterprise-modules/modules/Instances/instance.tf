@@ -2,7 +2,7 @@
 resource "oci_core_instance" "splunkvm" {
     availability_domain = "${var.avail_domain}"   
     compartment_id = "${var.COMP-ID}"
-    display_name = "${var.prefix}-"${var.unique_id}"
+    display_name = "${var.prefix}-${var.unique_id}"
     image = "${var.image_ocid}"
     shape = "${var.InstanceShape}"
   metadata {
@@ -17,9 +17,9 @@ resource "oci_core_instance" "splunkvm" {
  create_vnic_details {
    
     subnet_id = "${var.subnet}"
-    display_name = "${var.prefix}-nica"
+    display_name = "${var.prefix}-${var.unique_id}"
     assign_public_ip = true
-    hostname_label = "${var.prefix}-nica"
+    hostname_label = "${var.prefix}-${var.unique_id}"
   }
     }
 resource "null_resource" "remote-exec0" {
@@ -55,6 +55,6 @@ resource "oci_core_instance" "clientinstance" {
     subnet_id = "${var.subnet}"
     display_name = "clientnic"
     assign_public_ip = true
-    hostname_label = "${var.prefix}-"${var.unique_id}""
+    hostname_label = "${var.prefix}${var.unique_id}"
   }
 }
