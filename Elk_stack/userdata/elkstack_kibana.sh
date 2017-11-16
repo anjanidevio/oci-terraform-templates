@@ -100,4 +100,3 @@ sudo firewall-cmd --reload
 sudo service elasticsearch start
 sudo service kibana start
 sudo service nginx start
-exit 0
