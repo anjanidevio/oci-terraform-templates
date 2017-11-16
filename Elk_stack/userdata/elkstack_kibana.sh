@@ -60,13 +60,13 @@ echo "---Generate SSL Certificates---"
 sudo mkdir -p /etc/pki/tls/certs 
 sudo mkdir /etc/pki/tls/private 
 sudo sed -i "/\[ v3_ca \]/a subjectAltName = IP: $HOSTIP" /etc/ssl/openssl.cnf
-cd /etc/pki/tls >> $LOG
+cd /etc/pki/tls 
 sudo openssl req -config /etc/ssl/openssl.cnf -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt 
 
 #Configuring Logstash
 echo "---Configuring Logstash---" 
 sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/scripts/02-beats-input.conf -O /etc/logstash/conf.d/02-beats-input.conf 
-sudo ufw allow 5044 >> $LOG
+sudo ufw allow 5044 
 sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/scripts/10-syslog-filter.conf -O /etc/logstash/conf.d/10-syslog-filter.conf 
 sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/scripts/30-elasticsearch-output.conf -O /etc/logstash/conf.d/30-elasticsearch-output.conf 
 sudo /opt/logstash/bin/logstash --configtest -f /etc/logstash/conf.d/ 
