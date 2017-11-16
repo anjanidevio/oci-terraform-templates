@@ -78,4 +78,6 @@ module "vnic_data" {
     COMP-ID          = "${var.COMP-ID}"
     avail_domain     = "${module.data_source_AD.avail_domain}"
     splunk_instance  = "${module.instance.instance_ocid}"
+    splunkclient_instance= "${module.instance.client_instance_ocid}"
+
     }

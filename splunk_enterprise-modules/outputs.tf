@@ -10,3 +10,10 @@ output "splunk_public_ip" {
   value = ["${module.vnic_data.splunk_public_ip}"]
 }
 
+output "splunkclient_public_ip" {
+  value = ["${module.vnic_data.splunkclient_public_ip}"]
+}
+
+
+
+
