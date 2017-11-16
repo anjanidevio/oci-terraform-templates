@@ -30,7 +30,7 @@ resource "null_resource" "remote-exec" {
         "cd ~ubuntu",
         "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Elk_stack/userdata/elkstack_kibana.sh > elkstack_kibana.sh ",
         "chmod +x elkstack_kibana.sh",
-        "./elkstack_kibana.sh"
+        "./elkstack_kibana.sh >> remote-exec.log 2>&1"
       ]
     }
 } 
