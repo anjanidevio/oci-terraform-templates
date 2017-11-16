@@ -56,7 +56,7 @@ internet_gateway_ocid = "${module.internetgateway.internet_gateway_ocid}"
 route_table_ocid = "${module.route_table.route_table_ocid}"
 security_list_ocid = "${module.securitylist.security_list_ocid}"
 dhcp_ocid = "${module.dhcp_options.dhcp_ocid}"
-avial_domain_name = "${module.datasources.avial_domain_name}"
+avial_domain_name = "${module.datasources.avail_domain_name}"
 }
 
 
@@ -64,7 +64,7 @@ module "instance" {
 source = "modules/instance"
 compartment_id = "${var.compartment_id}"
 VCN-DisplayName = "${var.VCN-DisplayName}"
-avial_domain_name = "${module.datasources.avial_domain_name}"
+avial_domain_name = "${module.datasources.avail_domain_name}"
 subnet_ocid = "${module.subnet.subnet_ocid}"
 image_ocid = "${module.datasources.image_ocid}"
 InstanceShape = "${var.InstanceShape}"

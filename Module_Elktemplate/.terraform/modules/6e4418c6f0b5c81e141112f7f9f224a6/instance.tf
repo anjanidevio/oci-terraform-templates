@@ -1,5 +1,5 @@
 resource "oci_core_instance" "Elkvm" {
-    availability_domain = "${var.avail_domain_name}"
+    availability_domain = "${var.avial_domain_name}"
     compartment_id = "${var.compartment_id}"
      display_name = "${var.VCN-DisplayName}-ELK-instance"
     image = "${var.image_ocid}"
@@ -36,7 +36,7 @@ resource "null_resource" "remote-exec" {
 } 
 
 resource "oci_core_instance" "Clientvm" {
-    availability_domain = "${var.avail_domain_name}"
+    availability_domain = "${var.avial_domain_name}"
     compartment_id = "${var.compartment_id}"
     display_name = "${var.VCN-DisplayName}-client-instance"
     image = "${var.image_ocid}"
