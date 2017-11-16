@@ -1,12 +1,16 @@
-variable "tenancy_ocid" {  
+variable "tenancy_ocid" {
+    type    = "string"
+    default = "ocid1.tenancy.oc1..aaaaaaaaa4jvtf7x54iv54vz77ivqui2nlb7ordznpupnvqbaktl6vkwfhga"
 }
 
 variable "user_ocid" {
-    
+    type    = "string"
+    default = "ocid1.user.oc1..aaaaaaaat5pk2vhfib7bnf6n3bqsw2mjlieisfv4yfjtw5xvrkwpvvhkiloq"
 }
 
 variable "fingerprint" {
-    
+    type    = "string"
+    default = "71:ea:80:93:a1:92:f8:32:85:05:66:b2:9e:fe:74:40"
 }
 
 variable "private_key_path" {

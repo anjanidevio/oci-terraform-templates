@@ -2,7 +2,7 @@
 resource "oci_core_instance" "splunkvm" {
     availability_domain = "${var.avail_domain}"   
     compartment_id = "${var.COMP-ID}"
-    display_name = "${var.prefix}"
+    display_name = "${var.prefix}-"${var.unique_id}"
     image = "${var.image_ocid}"
     shape = "${var.InstanceShape}"
   metadata {
@@ -55,6 +55,6 @@ resource "oci_core_instance" "clientinstance" {
     subnet_id = "${var.subnet}"
     display_name = "clientnic"
     assign_public_ip = true
-    hostname_label = "${var.prefix}-cins"
+    hostname_label = "${var.prefix}-"${var.unique_id}""
   }
 }

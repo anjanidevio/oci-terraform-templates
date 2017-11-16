@@ -10,6 +10,7 @@ variable "subnet" {}
 variable "COMP-ID" {}
 variable "ssh_private_key" {}
 variable "splunk_public_ip" {}
+variable "unique_id" {}
 
 
 
