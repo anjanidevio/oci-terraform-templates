@@ -1,4 +1,4 @@
-variable "avial_domain_name" {}
+variable "avail_domain_name" {}
 variable "compartment_id" {}
 variable "VCN-DisplayName" {}
 variable "image_ocid" {}
