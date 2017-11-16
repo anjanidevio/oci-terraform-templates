@@ -11,7 +11,7 @@ variable "fingerprint" {
 }
 
 variable "private_key_url" {
-    default = ""
+    default = "./userdata/privatekey.pem"
 }
 
 variable "region" {
