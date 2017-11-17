@@ -1,7 +1,7 @@
 resource "oci_core_security_list" "ElksecurityRules" {
     compartment_id = "${var.compartment_id}"
     vcn_id = "${var.vcn_ocid}"
-    display_name = "${var.VCN-DisplayName}-Elksecrules${var.unique_id}"
+    display_name = "${var.VCN-DisplayName}-Elksecrules${var.uniqueid}"
     
   egress_security_rules = [
     {
