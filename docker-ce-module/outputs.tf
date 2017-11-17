@@ -1,9 +1,9 @@
 output "admin-username" {
-  value = "${var.admin_username}"
+  value = ["${var.admin_username}"]
 }
 
 output "admin-password" {
-  value = "${var.admin_password}"
+  value = ["${var.admin_password}"]
 }
 
 output "Manager_InstancePublicIP" {
