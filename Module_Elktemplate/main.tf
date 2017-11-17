@@ -3,12 +3,12 @@ source = "modules/vcn"
 VCN-DisplayName = "${var.VCN-DisplayName}"
 compartment_id  = "${var.compartment_id}"
 ElkVcn-CIDR     = "${var.ElkVcn-CIDR}"
- unique_id      = "${module.uniqueid.unique_id}"
+unique_id      = "${module.unique_id.uniqueid}"
 VCN-DNSLabel    = "${var.VCN-DNSLabel}"
 }
 
-module "uniqueid" {
-    	source = "modules/uniqueid"
+module "unique_id" {
+    	source = "modules/unique_id"
  	}
 
 
@@ -27,7 +27,7 @@ module "route_table" {
 source                = "modules/route_table"
 compartment_id        = "${var.compartment_id}"
 VCN-DisplayName       = "${var.VCN-DisplayName}"
-unique_id             = "${module.uniqueid.unique_id}"
+unique_id             = "${module.unique_id.uniqueid}"
 internet_gateway_ocid = "${module.internetgateway.internet_gateway_ocid}"
 vcn_ocid              = "${module.vcn.vcn_ocid}"
 }
@@ -37,7 +37,7 @@ module "securitylist" {
 source          = "modules/securitylist"
 compartment_id  = "${var.compartment_id}"
 VCN-DisplayName = "${var.VCN-DisplayName}"
- unique_id      = "${module.uniqueid.unique_id}"
+ unique_id      = "${module.unique_id.uniqueid}"
 vcn_ocid        = "${module.vcn.vcn_ocid}"
 }
 
@@ -46,7 +46,7 @@ source           = "modules/dhcp_options"
 compartment_id   = "${var.compartment_id}"
 VCN-DisplayName  = "${var.VCN-DisplayName}"
 vcn_ocid         = "${module.vcn.vcn_ocid}"
- unique_id       = "${module.uniqueid.unique_id}"
+ unique_id       = "${module.unique_id.uniqueid}"
 }
 
 
@@ -64,7 +64,7 @@ source                = "modules/subnet"
 compartment_id        = "${var.compartment_id}"
 VCN-DisplayName       = "${var.VCN-DisplayName}"
 vcn_ocid              = "${module.vcn.vcn_ocid}"
- unique_id            = "${module.uniqueid.unique_id}"
+ unique_id            = "${module.unique_id.uniqueid}"
 internet_gateway_ocid = "${module.internetgateway.internet_gateway_ocid}"
 route_table_ocid      = "${module.route_table.route_table_ocid}"
 security_list_ocid    = "${module.securitylist.security_list_ocid}"
@@ -77,7 +77,7 @@ module "instance" {
 source             = "modules/instance"
 compartment_id     = "${var.compartment_id}"
 VCN-DisplayName    = "${var.VCN-DisplayName}"
- unique_id         = "${module.uniqueid.unique_id}"
+ unique_id         = "${module.unique_id.uniqueid}"
 avial_domain_name  = "${module.datasources.avail_domain_name}"
 subnet_ocid        = "${module.subnet.subnet_ocid}"
 image_ocid         = "${module.datasources.image_ocid}"
