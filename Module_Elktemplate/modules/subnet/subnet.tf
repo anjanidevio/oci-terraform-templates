@@ -6,7 +6,7 @@ resource "oci_core_subnet" "Elksubnet" {
   vcn_id              = "${var.vcn_ocid}"
   security_list_ids   = ["${var.security_list_ocid}"]
   dhcp_options_id     = "${var.dhcp_ocid}"
-  dns_label           = "elksubnet"
-  display_name        = "${var.VCN-DisplayName}-publicsubnet"
+  dns_label           = "elksubnet${var.unique_id}"
+  display_name        = "${var.VCN-DisplayName}-public${var.unique_id}"
   cidr_block          = "10.0.0.0/24"
 }
