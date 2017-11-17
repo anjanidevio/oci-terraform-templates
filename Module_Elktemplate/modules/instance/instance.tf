@@ -28,7 +28,7 @@ resource "null_resource" "remote-exec" {
       }
       inline = [
         "cd ~ubuntu",
-        "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Module_Elktemplate/modules/instance/instance.tf > elkstack_kibana.sh ",
+        "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Module_Elktemplate/userdata/elkstack_kibana.sh > elkstack_kibana.sh ",
         "chmod +x elkstack_kibana.sh",
         "./elkstack_kibana.sh >> remote-exec.log 2>&1"
       ]
