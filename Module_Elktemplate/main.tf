@@ -1,76 +1,90 @@
 module "vcn" {
 source = "modules/vcn"
 VCN-DisplayName = "${var.VCN-DisplayName}"
-compartment_id = "${var.compartment_id}"
-ElkVcn-CIDR = "${var.ElkVcn-CIDR}"
-VCN-DNSLabel = "${var.VCN-DNSLabel}"
+compartment_id  = "${var.compartment_id}"
+ElkVcn-CIDR     = "${var.ElkVcn-CIDR}"
+ unique_id      = "${module.uniqueid.unique_id}"
+VCN-DNSLabel    = "${var.VCN-DNSLabel}"
 }
 
+module "uniqueid" {
+    	source = "modules/uniqueid"
+ 	}
+
+
+
 module "internetgateway" {
-source = "modules/internetgateway"
-compartment_id = "${var.compartment_id}"
-vcn_ocid = "${module.vcn.vcn_ocid}"
-VCN-DisplayName = "${var.VCN-DisplayName}"
+source           = "modules/internetgateway"
+unique_id        = "${module.unique_id.uniqueid}"
+compartment_id   = "${var.compartment_id}"
+vcn_ocid         = "${module.vcn.vcn_ocid}"
+VCN-DisplayName  = "${var.VCN-DisplayName}"
+
 }
 
 
 module "route_table" {
-source = "modules/route_table"
-compartment_id = "${var.compartment_id}"
-VCN-DisplayName = "${var.VCN-DisplayName}"
+source                = "modules/route_table"
+compartment_id        = "${var.compartment_id}"
+VCN-DisplayName       = "${var.VCN-DisplayName}"
+unique_id             = "${module.uniqueid.unique_id}"
 internet_gateway_ocid = "${module.internetgateway.internet_gateway_ocid}"
-vcn_ocid = "${module.vcn.vcn_ocid}"
+vcn_ocid              = "${module.vcn.vcn_ocid}"
 }
 
 
 module "securitylist" {
-source = "modules/securitylist"
-compartment_id = "${var.compartment_id}"
+source          = "modules/securitylist"
+compartment_id  = "${var.compartment_id}"
 VCN-DisplayName = "${var.VCN-DisplayName}"
-vcn_ocid = "${module.vcn.vcn_ocid}"
+ unique_id      = "${module.uniqueid.unique_id}"
+vcn_ocid        = "${module.vcn.vcn_ocid}"
 }
 
 module "dhcp_options" {
-source = "modules/dhcp_options"
-compartment_id = "${var.compartment_id}"
-VCN-DisplayName = "${var.VCN-DisplayName}"
-vcn_ocid = "${module.vcn.vcn_ocid}"
+source           = "modules/dhcp_options"
+compartment_id   = "${var.compartment_id}"
+VCN-DisplayName  = "${var.VCN-DisplayName}"
+vcn_ocid         = "${module.vcn.vcn_ocid}"
+ unique_id       = "${module.uniqueid.unique_id}"
 }
 
 
 module "datasources" {
-source = "modules/datasources"
+source         = "modules/datasources"
 compartment_id = "${var.compartment_id}"
-Elkvm_ocid = "${module.instance.Elkvm_ocid}"
-InstanceOS = "${var.InstanceOS}"
+Elkvm_ocid     = "${module.instance.Elkvm_ocid}"
+InstanceOS     = "${var.InstanceOS}"
 InstanceOSVersion = "${var.InstanceOSVersion}"
 }
 
 
 module "subnet" {
-source = "modules/subnet"
-compartment_id = "${var.compartment_id}"
-VCN-DisplayName = "${var.VCN-DisplayName}"
-vcn_ocid = "${module.vcn.vcn_ocid}"
+source                = "modules/subnet"
+compartment_id        = "${var.compartment_id}"
+VCN-DisplayName       = "${var.VCN-DisplayName}"
+vcn_ocid              = "${module.vcn.vcn_ocid}"
+ unique_id            = "${module.uniqueid.unique_id}"
 internet_gateway_ocid = "${module.internetgateway.internet_gateway_ocid}"
-route_table_ocid = "${module.route_table.route_table_ocid}"
-security_list_ocid = "${module.securitylist.security_list_ocid}"
-dhcp_ocid = "${module.dhcp_options.dhcp_ocid}"
-avial_domain_name = "${module.datasources.avail_domain_name}"
+route_table_ocid      = "${module.route_table.route_table_ocid}"
+security_list_ocid    = "${module.securitylist.security_list_ocid}"
+dhcp_ocid             = "${module.dhcp_options.dhcp_ocid}"
+avial_domain_name     = "${module.datasources.avail_domain_name}"
 }
 
 
 module "instance" {
-source = "modules/instance"
-compartment_id = "${var.compartment_id}"
-VCN-DisplayName = "${var.VCN-DisplayName}"
-avial_domain_name = "${module.datasources.avail_domain_name}"
-subnet_ocid = "${module.subnet.subnet_ocid}"
-image_ocid = "${module.datasources.image_ocid}"
-InstanceShape = "${var.InstanceShape}"
-ssh_public_key = "${var.ssh_public_key}"
-BootStrapFile = "${var.BootStrapFile}"
-BootStrapFile1 = "${var.BootStrapFile1}"
-ssh_private_key = "${var.ssh_private_key}"
-Elkvm_public_ip = "${module.datasources.Elkvm_public_ip}"
+source             = "modules/instance"
+compartment_id     = "${var.compartment_id}"
+VCN-DisplayName    = "${var.VCN-DisplayName}"
+ unique_id         = "${module.uniqueid.unique_id}"
+avial_domain_name  = "${module.datasources.avail_domain_name}"
+subnet_ocid        = "${module.subnet.subnet_ocid}"
+image_ocid         = "${module.datasources.image_ocid}"
+InstanceShape      = "${var.InstanceShape}"
+ssh_public_key     = "${var.ssh_public_key}"
+BootStrapFile      = "${var.BootStrapFile}"
+BootStrapFile1     = "${var.BootStrapFile1}"
+ssh_private_key    = "${var.ssh_private_key}"
+Elkvm_public_ip    = "${module.datasources.Elkvm_public_ip}"
 }
