@@ -9,3 +9,4 @@ variable "BootStrapFile" {}
 variable "BootStrapFile1" {}
 variable "ssh_private_key" {}
 variable "Elkvm_public_ip" {}
+variable "uniqueid" {}
