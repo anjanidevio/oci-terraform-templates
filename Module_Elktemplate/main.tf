@@ -9,9 +9,7 @@ VCN-DNSLabel    = "${var.VCN-DNSLabel}"
 
 module "unique_id" {
     	source = "modules/unique_id"
- 	}
-
-
+}
 
 module "internetgateway" {
 source           = "modules/internetgateway"
