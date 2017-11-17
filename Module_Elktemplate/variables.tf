@@ -55,9 +55,9 @@ variable "BootStrapFile1" {
 variable "ssh_private_key" {
     default = "./userdata/elkprivatekey.pem"
 }
-variable "adminusername" {
+variable "admin_username" {
     default = "ubuntu"
 }
-variable "adminpassword" {
+variable "admin_password" {
     default = "elastic@123"
 }

@@ -7,7 +7,7 @@ uniqueid      = "${module.unique_id.uniqueid}"
 VCN-DNSLabel    = "${var.VCN-DNSLabel}"
 }
 
-module "unique_id" {
+module "uniqueid" {
     	source = "modules/unique_id"
  	}
 
