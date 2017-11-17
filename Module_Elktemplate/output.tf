@@ -5,9 +5,9 @@ output "Clientpublicip" {
   value = ["${module.instance.Clientvmpublicip}"]
 }
 output "adminusername" {
-  value = "${var.admin_username}"
+  value = ["${var.admin_username}"]
 }
 
 output "adminpassword" {
-  value = "${var.admin_password}"
+  value = ["${var.admin_password}"]
 }
