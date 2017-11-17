@@ -1,7 +1,7 @@
 resource "oci_core_instance" "Elkvm" {
     availability_domain = "${var.avial_domain_name}"
     compartment_id = "${var.compartment_id}"
-     display_name = "${var.VCN-DisplayName}-ELK-instance"
+     display_name = "${var.VCN-DisplayName}-instance-vcn${var.unique_id}"
     image = "${var.image_ocid}"
     shape = "${var.InstanceShape}"
     subnet_id = "${var.subnet_ocid}"
@@ -38,7 +38,7 @@ resource "null_resource" "remote-exec" {
 resource "oci_core_instance" "Clientvm" {
     availability_domain = "${var.avial_domain_name}"
     compartment_id = "${var.compartment_id}"
-    display_name = "${var.VCN-DisplayName}-client-instance"
+    display_name = "${var.VCN-DisplayName}clientinstance${var.unique_id}"
     image = "${var.image_ocid}"
     shape = "${var.InstanceShape}"
     depends_on = ["oci_core_instance.Elkvm"]
