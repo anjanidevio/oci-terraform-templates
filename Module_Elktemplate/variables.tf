@@ -44,7 +44,7 @@ variable "InstanceOSVersion" {
     default = "16.04"
 }
 variable "InstanceShape" {
-    default = "VM.Standard1.8"
+    default = "VM.Standard1.4"
 }
 variable "BootStrapFile" {
    default = "./userdata/enablepassword.sh"
