@@ -1,1 +1,0 @@
-# oci-terraform-templates
