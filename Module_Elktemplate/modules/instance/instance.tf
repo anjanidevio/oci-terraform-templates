@@ -18,6 +18,7 @@ resource "oci_core_instance" "Elkvm" {
 }
 resource "null_resource" "remote-exec" {
     depends_on = ["oci_core_instance.Elkvm"]
+    depends_on = ["oci_core_instance.Clientvm"]
     provisioner "remote-exec" {
       connection {
         agent = false
