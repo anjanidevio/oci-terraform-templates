@@ -68,7 +68,7 @@ module "subnets" {
 module "vnic_data_source" {
     source = "modules/vnic_data_source"
     compartment_ocid = "${var.compartment_ocid}"
-    ad1_name = "${module.ad_data_source.ad_name}"
+    ad_name = "${module.ad_data_source.ad_name}"
     instance_linux_ocid = "${module.instance.instance_linux_ocid}"
 }
 

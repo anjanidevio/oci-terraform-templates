@@ -3,5 +3,5 @@ output "vcn_ocid" {
 }
 
 output "dhcp_ocid" {
-    value = "${oci_core_virtual_network.vcn1.default_dhcp_options_id}"
+    value = "${oci_core_virtual_network.vcn.default_dhcp_options_id}"
 }
