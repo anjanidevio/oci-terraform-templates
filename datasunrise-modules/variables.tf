@@ -58,3 +58,11 @@ variable "instanceLinOSVersion" {
 variable "bootStrapFileDir" {
     default = "./userdata/enable-password.sh"
 }
+
+variable "postgrePassword" {
+    default = "postgre@123"
+}
+
+variable "dataSunrise-GUI-Password" {
+    default = "datasunrise@123"
+}
