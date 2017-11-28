@@ -10,3 +10,5 @@ variable "ssh_private_key" {}
 variable "admin_username" {}
 variable "admin_password" {}
 variable "linux_public_ip" {}
+variable "dataSunrise-GUI-Password" {}
+variable "postgrePassword" {}
