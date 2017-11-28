@@ -15,7 +15,7 @@ variable "fingerprint" {
 
 variable "private_key_path" {
     type    = "string"
-    default = "c:/Users/sushmithan/AppData/Roaming/oci_api_keys/obmcpvt.pem"
+    default = "c:/Users/srekapalli/AppData/Roaming/oci_api_keys/obmcpvt.pem"
 }
 
 variable "prefix" {
