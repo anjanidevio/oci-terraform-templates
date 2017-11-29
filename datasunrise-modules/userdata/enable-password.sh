@@ -1,6 +1,9 @@
 #!/bin/bash
 username=datasunrise
 pwd=datasunrise@1234
+
+echo -e "opc ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
+echo -e "$username ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 ############change username from default username ############
 sudo usermod -l $username opc
 usermod -d /home/$username -m $username
