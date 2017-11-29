@@ -35,7 +35,7 @@ resource "null_resource" "remote-exec" {
         "cd ~${var.admin_username}",
         "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-datasunrise/datasunrise-modules/userdata/install_datasunrise.sh > install-datasunrise.sh",
         "chmod +x install-datasunrise.sh",
-        "./install-datasunrise.sh ${var.dataSunrise-GUI-Password} ${var.postgrePassword} >> remote-exec.log 2>&1"
+        "sudo /home/datasunrise/install-datasunrise.sh ${var.dataSunrise-GUI-Password} ${var.postgrePassword} >> remote-exec.log 2>&1"
       ]
     }
 }
