@@ -24,6 +24,9 @@ module "instance" {
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
     linux_public_ip = "${module.vnic_data_source.linux_public_ip}"
+    dataSunrise-GUI-Password = "${var.dataSunrise-GUI-Password}"
+    postgrePassword = "${var.postgrePassword}"
+   
 }
 
 module "internet_gateway" {
