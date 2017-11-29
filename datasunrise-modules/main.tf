@@ -18,7 +18,7 @@ module "instance" {
     instanceShape = "${var.instanceShape}"
     subnet1_ocid = "${module.subnets.subnet1_ocid}"
     bootStrapFileDir = "${var.bootStrapFileDir}"
-    ad_name = "${module.ad_data_source.ad_name}"
+    ad2_name = "${module.ad_data_source.ad2_name}"
     sshPublicKey = "${var.sshPublicKey}"
     ssh_private_key = "${var.ssh_private_key}"
     admin_username = "${var.admin_username}"
@@ -62,13 +62,13 @@ module "subnets" {
     security_list_ocid = "${module.security_list.security_list_ocid}"
     route_table_ocid = "${module.route_table.route_table_ocid}"
     dhcp_ocid = "${module.vcn.dhcp_ocid}"
-    ad_name = "${module.ad_data_source.ad_name}"
+    ad2_name = "${module.ad_data_source.ad2_name}"
 }
 
 module "vnic_data_source" {
     source = "modules/vnic_data_source"
     compartment_ocid = "${var.compartment_ocid}"
-    ad_name = "${module.ad_data_source.ad_name}"
+    ad2_name = "${module.ad_data_source.ad2_name}"
     instance_linux_ocid = "${module.instance.instance_linux_ocid}"
 }
 

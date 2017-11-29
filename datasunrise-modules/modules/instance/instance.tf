@@ -1,5 +1,5 @@
 resource "oci_core_instance" "linux" {
-  availability_domain = "${var.ad_name}"
+  availability_domain = "${var.ad2_name}"
   compartment_id = "${var.compartment_ocid}"
   display_name = "${var.prefix}-server"
   image = "${var.image_ocid}"

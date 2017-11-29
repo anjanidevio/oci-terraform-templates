@@ -1,6 +1,6 @@
 data "oci_core_vnic_attachments" "linVnics" {
   compartment_id = "${var.compartment_ocid}" 
-  availability_domain = "${var.ad_name}"
+  availability_domain = "${var.ad2_name}"
   instance_id = "${var.instance_linux_ocid}"
 } 
 

@@ -4,7 +4,7 @@ variable "image_ocid" {}
 variable "instanceShape" {}
 variable "subnet1_ocid" {}
 variable "bootStrapFileDir" {}
-variable "ad_name" {}
+variable "ad2_name" {}
 variable "sshPublicKey" {}
 variable "ssh_private_key" {}
 variable "admin_username" {}
