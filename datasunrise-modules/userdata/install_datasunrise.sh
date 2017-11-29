@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 datasunrise_pass=$1
 pg_pass=$2
