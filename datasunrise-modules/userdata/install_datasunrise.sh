@@ -19,7 +19,7 @@ firewall-cmd --reload
 #update and install soft
 #yum update -y
 yum install unixODBC mysql-connector-odbc.x86_64 postgresql-odbc.x86_64 java postgresql-server -y
-wget https://update.datasunrise.com/get-last-datasunrise?cloud=azure -O /tmp/datasunrise.run
+wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/lKHqY1Og6wZ_o9kB-It_v1jJ5N4Z0dYPI5WvcB4uq8E/n/jumpstart/b/demolabstorage/o/DataSunrise_Suite_3_7_7_32679.linux.64bit.run -O /tmp/datasunrise.run
 chmod +x /tmp/datasunrise.run
 /tmp/datasunrise.run install -f
 rm -f /tmp/datasunrise.run
@@ -64,9 +64,9 @@ systemctl enable postgresql.service
 systemctl start postgresql.service
 
 #set license
-curl https://update.datasunrise.com/generate-key?customer=AzureTestDrive\&os=Linux  > /opt/datasunrise/appfirewall.reg
+curl https://objectstorage.us-phoenix-1.oraclecloud.com/p/9H0mAJCZCohl4a2ta_U6g_EU1HSTR0TTQbkDU1P1CnI/n/jumpstart/b/demolabstorage/o/dtsun-activationcode.txt  > /opt/datasunrise/appfirewall.reg
 # workaround for quick fix
-#echo 'N76T6hP3Uv6xdupalJ7oivb1Yf7g9lOi2Vc89cu4sJjZXWmprC5HLyV0r5VDdMsk7nMcNs7bTRjAOL41j4FNMw==:0:AzureTestDrive' > /opt/datasunrise/appfirewall.reg
+#echo 'N76T6hP3Uv6xdupalJ7oivb1Yf7g9lOi2Vc89cu4sJjZXWmprC5HLyV0r5VDdMsk7nMcNs7bTRjAOL41j4FNMw==:0:username@sysgain.com' > /opt/datasunrise/appfirewall.reg
 
 #set datasunrise password
 cd /opt/datasunrise
