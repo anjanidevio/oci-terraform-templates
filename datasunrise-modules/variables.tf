@@ -1,13 +1,13 @@
 variable "tenancy_ocid" {
-    default =  "ocid1.tenancy.oc1..aaaaaaaaa4jvtf7x54iv54vz77ivqui2nlb7ordznpupnvqbaktl6vkwfhga"
+    default =  ""
 }
 
 variable "user_ocid" {
-    default = "ocid1.user.oc1..aaaaaaaaahytv265dsl4rwlazdxkmbhgsk4mgdivhn3a6mlckcb73ubcsppq"
+    default = ""
 }
 
 variable "fingerprint" {
-    default = "da:7a:d7:11:da:12:84:df:5a:9f:29:0f:79:3b:6f:26"
+    default = ""
 }
 
 variable "private_key_path" {
@@ -41,7 +41,6 @@ variable "admin_username" {
 variable "admin_password" {
     default = "datasunrise@1234"
 }
-
 
 variable "instanceShape" {
     default = "VM.Standard1.4"
