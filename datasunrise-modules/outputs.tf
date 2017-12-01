@@ -9,3 +9,4 @@ output "dataSunriseGUIUsername" {
 }
 output "dataSunriseGUIPassword" {
   value = "${var.dataSunrise-GUI-Password}"
+}
