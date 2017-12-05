@@ -27,10 +27,10 @@ resource "null_resource" "remote-exec" {
         private_key = "${(file(var.ssh_private_key))}"
       }
       inline = [
-        //"cd ~ubuntu",
-       // "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-elk-stack/Module_Elktemplate/userdata/elkstack_kibana.sh > elkstack_kibana.sh ",
-       // "chmod +x elkstack_kibana.sh",
-      //  "./elkstack_kibana.sh >> remote-exec.log 2>&1"
+        "cd ~ubuntu",
+        "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-mariadb/MariaDB_Modules/userdata/mariadb_wordpress.sh > mariadb_wordpress.sh ",
+        "chmod +x mariadb_wordpress.sh",
+        "./mariadb_wordpress.sh >> remote-exec.log 2>&1"
       ]
     }
 } 
