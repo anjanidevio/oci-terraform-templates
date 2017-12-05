@@ -26,7 +26,7 @@ variable "mariadbVcn-CIDR" {
 }
 
 variable "VCN-DisplayName" {
-  default = "mariadbvcn"
+  default = "mariadb"
 }
 
 variable "VCN-DNSLabel" {
