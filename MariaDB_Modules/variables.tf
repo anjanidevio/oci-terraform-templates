@@ -46,7 +46,7 @@ variable "InstanceShape" {
     default = "VM.Standard1.8"
 }
 variable "BootStrapFile" {
-   default = "./userdata/enablepassword.sh"
+   default = "./userdata/mariadb.sh"
 }
 variable "ssh_private_key" {
     default = "./userdata/mariadbprivatekey.pem"
