@@ -85,5 +85,5 @@ InstanceShape      = "${var.InstanceShape}"
 ssh_public_key     = "${var.ssh_public_key}"
 BootStrapFile      = "${var.BootStrapFile}"
 ssh_private_key    = "${var.ssh_private_key}"
-mariadbvm_public_ip = "${module.datasources.maraidbvm_public_ip}"
+mariadbvm_public_ip = "${module.datasources.mariadbvm_public_ip}"
 }
