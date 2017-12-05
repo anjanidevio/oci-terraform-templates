@@ -53,7 +53,7 @@ vcn_ocid         = "${module.vcn.vcn_ocid}"
 module "datasources" {
 source         = "modules/datasources"
 compartment_id = "${var.compartment_id}"
-mariadbvm_ocid     = "${module.instance.mariadbvm_ocid}"
+mariadb_ocid     = "${module.instance.mariadb_ocid}"
 InstanceOS     = "${var.InstanceOS}"
 InstanceOSVersion = "${var.InstanceOSVersion}"
 }
