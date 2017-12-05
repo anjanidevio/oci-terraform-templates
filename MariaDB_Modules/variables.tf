@@ -1,4 +1,4 @@
-ariable "tenancy_ocid" {
+variable "tenancy_ocid" {
   
 }
 

@@ -2,7 +2,7 @@ module "vcn" {
 source = "modules/vcn"
 VCN-DisplayName = "${var.VCN-DisplayName}"
 compartment_id  = "${var.compartment_id}"
-ElkVcn-CIDR     = "${var.mariadbVcn-CIDR}"
+mariadbVcn-CIDR     = "${var.mariadbVcn-CIDR}"
 uniqueid      = "${module.unique_id.uniqueid}"
 VCN-DNSLabel    = "${var.VCN-DNSLabel}"
 }

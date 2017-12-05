@@ -1,7 +1,7 @@
 data "oci_core_vnic_attachments" "mariadbnic" {
   compartment_id = "${var.compartment_id}"
   availability_domain = "${lookup(data.oci_identity_availability_domains.availdomain.availability_domains[0],"name")}"
-  instance_id = "${var.mariadbvm_ocid}"
+  instance_id = "${var.mariadb_ocid}"
 } 
 
 data "oci_core_vnic" "mariadb-nic" {
