@@ -1,6 +1,6 @@
 #!/bin/bash
 username="mariadb"
-pwd=mariadb@123
+pwd="mariadb@123"
 sudo usermod -l $username ubuntu
 usermod -d /home/$username -m $username
 echo -e "$pwd\n$pwd" | sudo passwd $username
