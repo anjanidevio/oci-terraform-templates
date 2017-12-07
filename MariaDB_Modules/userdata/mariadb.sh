@@ -1,5 +1,5 @@
 #!/bin/bash
-username="mariadb"
+username="ubuntu"
 pwd="mariadb@123"
 sudo usermod -l $username ubuntu
 usermod -d /home/$username -m $username
