@@ -1,12 +1,8 @@
 variable "tenancy_ocid" {
-  default = "ocid1.tenancy.oc1..aaaaaaaaa4jvtf7x54iv54vz77ivqui2nlb7ordznpupnvqbaktl6vkwfhga"
 }
 variable "user_ocid" {
-    default = "ocid1.user.oc1..aaaaaaaaahytv265dsl4rwlazdxkmbhgsk4mgdivhn3a6mlckcb73ubcsppq"
 }
-
 variable "fingerprint" {
-    default = "da:7a:d7:11:da:12:84:df:5a:9f:29:0f:79:3b:6f:26"
 }
 variable "compartment_ocid" {
     default = "ocid1.compartment.oc1..aaaaaaaajgefvmehc6szlyyt66aiu6ecefhr7myrn32w2c5prxng5mq3wu7q"
