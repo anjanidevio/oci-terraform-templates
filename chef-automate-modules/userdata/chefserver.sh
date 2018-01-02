@@ -32,7 +32,7 @@ echo "Creating delivery user and irguser organization..."
 sudo chef-server-ctl user-create delivery Chef Admin admin@test.com Password@1234 --filename /etc/opscode/delivery.pem
 sudo chef-server-ctl org-create orguser "chef-orguser, Inc." --association_user delivery --filename /etc/opscode/orguser-validator.pem
 fi
- sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-chef-automate/chef-automate-modules/user-data/ssh_private_key.pem
+ sudo wget https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-chef-automate/chef-automate-modules/userdata/ssh_private_key.pem
 sudo chmod 000 ssh_private_key.pem
 sudo scp -o StrictHostKeyChecking=no  -i ssh_private_key.pem /etc/opscode/delivery.pem  ubuntu@10.0.1.2:/tmp
 # configure data collection
