@@ -58,7 +58,7 @@ variable "BootStrapFile" {
 }
 
 variable "ssh_private_key" {
-    default = "./userdata/ssh_private_key"
+    default = "./userdata/ssh_private_key.pem"
 }
 variable "admin_username" {
     default = "chefuser"
