@@ -28,7 +28,7 @@ resource "null_resource" "remote-exec" {
         private_key = "${(file(var.ssh_private_key))}"
       }
       inline = [
-       "curl https://raw.githubusercontent.com/sudheermareddy/test/master/puppetsetup.sh > puppetsetup.sh",
+       "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-puppet-eterprise/oci-puppet-eterprise/userdata/puppetsetup.sh > puppetsetup.sh",
        "chmod 777 puppetsetup.sh",
        "./puppetsetup.sh >> remote-exec.log 2>&1" 
       ]
