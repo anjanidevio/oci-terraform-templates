@@ -28,7 +28,7 @@ resource "null_resource" "remote-exec" {
         private_key = "${(file(var.ssh_private_key))}"
       }
       inline = [
-       "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-chef-automate/chef-automate-modules/user-data/chefserver.sh > chefserver.sh",
+       "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-chef-automate/chef-automate-modules/userdata/chefserver.sh > chefserver.sh",
        "chmod 777 chefserver.sh",
        "cat chefserver.sh | tr -d '\r' > server.sh",
        "chmod +x server.sh",
@@ -67,7 +67,7 @@ resource "oci_core_instance" "chefautomate" {
         private_key = "${(file(var.ssh_private_key))}"
       }
       inline = [
-       "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-chef-automate/chef-automate-modules/user-data/chefautomate.sh > chefautomate.sh",
+       "curl https://raw.githubusercontent.com/sysgain/oci-terraform-templates/oci-chef-automate/chef-automate-modules/userdata/chefautomate.sh > chefautomate.sh",
        "chmod 777 chefautomate.sh",
        "cat chefautomate.sh | tr -d '\r' > automate.sh",
        "chmod +x automate.sh",
