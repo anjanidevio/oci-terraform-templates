@@ -8,3 +8,4 @@ sudo apt-get install ansible -y
 echo "********* ansible installed************"
 echo "********* ansible version**************"
 ansible --version
+exit
