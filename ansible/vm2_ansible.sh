@@ -3,6 +3,6 @@ echo "******** python installation *********"
 sudo apt-get update
 sudo apt-get install software-properties-common python-software-properties -y
 sudo apt-get update
-sudo apt-get install python
+sudo apt-get install python -y
 python --version
-exit
+exit 0
