@@ -1,3 +1,4 @@
+admin_username=$1
 sudo apt-get -y update
 sudo apt-get purge -y ufw
 sudo apt-get install -y firewalld
@@ -44,5 +45,5 @@ sudo gdebi -n rstudio-server-1.1.442-amd64.deb
 rm rstudio-server-*
 sudo rstudio-server verify-installation
 jupyter notebook --generate-config
-echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >>/home/datascience/.jupyter/jupyter_notebook_config.py
+echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >>/home/$admin_username/.jupyter/jupyter_notebook_config.py
 jupyter notebook
