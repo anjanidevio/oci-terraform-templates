@@ -1,3 +1,4 @@
+SHELL = /bin/bash
 admin_username=$1
 sudo apt-get -y update
 sudo apt-get purge -y ufw
@@ -13,10 +14,12 @@ sudo apt install python-pip
 pip install virtualenv
 cd ~/
 mkdir venv
+pip install --upgrade pip
 pushd venv
-virtualenv data-science
+#virtualenv data-science
+python -m virtualenv data-science
 popd
-source ~/data-science/bin/activate
+source ~/venv/data-science/bin/activate
 pip install --upgrade setuptools
 pip install virtualenvwrapper
 pip install cython
@@ -45,5 +48,5 @@ sudo gdebi -n rstudio-server-1.1.442-amd64.deb
 rm rstudio-server-*
 sudo rstudio-server verify-installation
 jupyter notebook --generate-config
-echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >>/home/$admin_username/.jupyter/jupyter_notebook_config.py
-jupyter notebook
+echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >> /home/datascience/.jupyter/jupyter_notebook_config.py
+#jupyter notebook
