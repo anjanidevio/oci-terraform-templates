@@ -1,6 +1,5 @@
 SHELL = /bin/bash
 admin_username=$1
-public_IP=$2
 sudo apt-get -y update
 sudo apt-get purge -y ufw
 sudo apt-get install -y firewalld
@@ -49,7 +48,7 @@ sudo gdebi -n rstudio-server-1.1.442-amd64.deb
 rm rstudio-server-*
 sudo rstudio-server verify-installation
 jupyter notebook --generate-config
-echo -e "\nc.NotebookApp.ip = '$public_IP'" >> /home/datascience/.jupyter/jupyter_notebook_config.py
+echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >> /home/datascience/.jupyter/jupyter_notebook_config.py
 #jupyter notebook
 
 ##Steps for Test Drive
