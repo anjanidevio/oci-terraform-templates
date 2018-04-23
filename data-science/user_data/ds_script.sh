@@ -50,3 +50,20 @@ sudo rstudio-server verify-installation
 jupyter notebook --generate-config
 echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >> /home/datascience/.jupyter/jupyter_notebook_config.py
 #jupyter notebook
+
+##Steps for Test Drive
+sudo apt-get install -y dos2unix 
+sudo mkdir /tmp/azurefiles
+
+## Restricted Environment Setup
+sudo cp /bin/bash /bin/rbash 
+sudo usermod -s /bin/rbash $admin_username
+sudo mkdir  -p /home/$admin_username/programs
+sudo wget -O /tmp/azurefiles/bashprofile.txt https://aztdrepo.blob.core.windows.net/restrictedshell/bashprofile.txt
+
+sudo cat /tmp/azurefiles/bashprofile.txt | dos2unix | sudo tee /home/$admin_username/.bash_profile
+
+sudo ln -s /bin/sh /home/$admin_username/programs/
+sudo ln -s /home/datascience/venv/data-science/bin/jupyter /home/$admin_username/programs/
+
+sudo chattr +i /home/$admin_username/.bash_profile
