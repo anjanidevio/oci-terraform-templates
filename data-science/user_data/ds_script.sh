@@ -1,5 +1,6 @@
 SHELL = /bin/bash
 admin_username=$1
+public_IP=$2
 sudo apt-get -y update
 sudo apt-get purge -y ufw
 sudo apt-get install -y firewalld
@@ -48,7 +49,7 @@ sudo gdebi -n rstudio-server-1.1.442-amd64.deb
 rm rstudio-server-*
 sudo rstudio-server verify-installation
 jupyter notebook --generate-config
-echo -e "\nc.NotebookApp.ip = '0.0.0.0'" >> /home/datascience/.jupyter/jupyter_notebook_config.py
+echo -e "\nc.NotebookApp.ip = '$public_IP'" >> /home/datascience/.jupyter/jupyter_notebook_config.py
 #jupyter notebook
 
 ##Steps for Test Drive
@@ -63,7 +64,7 @@ sudo wget -O /tmp/azurefiles/bashprofile.txt https://aztdrepo.blob.core.windows.
 
 sudo cat /tmp/azurefiles/bashprofile.txt | dos2unix | sudo tee /home/$admin_username/.bash_profile
 
-sudo ln -s /bin/sh /home/$admin_username/programs/
+#sudo ln -s /bin/sh /home/$admin_username/programs/
 sudo ln -s /home/datascience/venv/data-science/bin/jupyter /home/$admin_username/programs/
 
 sudo chattr +i /home/$admin_username/.bash_profile
